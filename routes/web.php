@@ -34,9 +34,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
     Route::group(['middleware' => ['auth']], function() {
         /**
-         * Home Routes
+         * Event Routes
          */
-        Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/', [App\Http\Controllers\EventController::class, 'index'])->name('events');
+
+        Route::get('/events/buy/{event}', [App\Http\Controllers\EventController::class, 'buy'])->name('event.buy');
+        Route::get('/events/withdraw/{event}', [App\Http\Controllers\EventController::class, 'withdraw'])->name('event.withdraw');
 
         /**
          * Logout Routes

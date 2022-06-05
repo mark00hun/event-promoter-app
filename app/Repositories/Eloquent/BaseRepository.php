@@ -33,6 +33,11 @@ class BaseRepository implements RepositoryInterface
         return $this->model->create($attributes);
     }
 
+    public function updateOrCreate(array $attributes): Model
+    {
+        return $this->model->updateOrCreate($attributes);
+    }
+
     public function newQuery(): Builder
     {
         return $this->model->newQuery();

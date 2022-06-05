@@ -5,11 +5,13 @@
         <table class="table datatable">
             <thead>
             <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Date</th>
                 <th>Description</th>
                 <th>Location</th>
                 <th>Performer</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -22,8 +24,13 @@
             var table = $('.datatable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('home') }}",
+                responsive: true,
+                ajax: "{{ route('events') }}",
                 columns: [
+                    {
+                        data: 'id_event',
+                        name: 'id_event'
+                    },
                     {
                         data: 'name',
                         name: 'name'
@@ -44,7 +51,13 @@
                         data: 'performer',
                         name: 'performer.name'
                     },
-                ]
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable:false
+                    },
+                ],
             });
 
         });
