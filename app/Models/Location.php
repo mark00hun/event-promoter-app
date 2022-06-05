@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int $id_location
+ * @property string $name
+ */
 class Location extends Model
 {
     use HasFactory;
@@ -14,12 +18,5 @@ class Location extends Model
 
     protected $guarded = [
         'id_location'
-    ];
-
-    protected $casts = [
-        'date' => 'date',
-        'price' => 'float',
-        'fk_id_location' => 'integer',
-        'fk_id_performer' => 'integer',
     ];
 }

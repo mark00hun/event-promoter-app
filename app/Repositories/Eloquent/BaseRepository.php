@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Repositories\Eloquent;
 
 use App\Repositories\RepositoryInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -30,5 +31,10 @@ class BaseRepository implements RepositoryInterface
     public function create(array $attributes): Model
     {
         return $this->model->create($attributes);
+    }
+
+    public function newQuery(): Builder
+    {
+        return $this->model->newQuery();
     }
 }
