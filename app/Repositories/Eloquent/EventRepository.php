@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Collection;
  * @method Event|null find(int $id)
  * @method Event[]|Collection all()
  * @method Event create(array $attributes)
+ * @method Event updateOrCreate(array $attributes)
  * @method Builder newQuery()
  */
 class EventRepository extends BaseRepository implements EventRepositoryInterface

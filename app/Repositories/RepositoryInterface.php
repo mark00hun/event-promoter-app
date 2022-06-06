@@ -14,5 +14,7 @@ interface RepositoryInterface
 
     public function create(array $attributes): Model;
 
+    public function updateOrCreate(array $attributes): Model;
+
     public function newQuery(): Builder;
 }

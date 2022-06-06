@@ -6,6 +6,7 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\User;
 use App\Repositories\UserRepositoryInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Collection;
  * @method User|null find(int $id)
  * @method User[]|Collection all()
  * @method User create(array $attributes)
+ * @method User updateOrCreate(array $attributes)
+ * @method Builder newQuery()
  */
 class UserRepository extends BaseRepository implements UserRepositoryInterface
 {

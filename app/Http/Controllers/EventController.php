@@ -49,6 +49,9 @@ class EventController extends Controller
         return view('events');
     }
 
+    /**
+     * Join User to Event
+     */
     public function buy(Event $event)
     {
         $user = $this->eventProcess->getUserById(Auth::id());
@@ -60,6 +63,9 @@ class EventController extends Controller
         return redirect()->route('events');
     }
 
+    /**
+     * Disjoin User from Event
+     */
     public function withdraw(Event $event)
     {
         $user = $this->eventProcess->getUserById(Auth::id());
